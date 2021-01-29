@@ -35,17 +35,19 @@ class CommentViewSet(viewsets.ModelViewSet):
         return post.comments.all()
 
 
-class GroupViewSet(viewsets.GenericViewSet,
-                   mixins.ListModelMixin,
-                   mixins.CreateModelMixin):
+class ListCreateViewSet(viewsets.GenericViewSet,
+                        mixins.ListModelMixin,
+                        mixins.CreateModelMixin):
+    pass
+
+
+class GroupViewSet(ListCreateViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
 
-class FollowViewSet(viewsets.GenericViewSet,
-                    mixins.ListModelMixin,
-                    mixins.CreateModelMixin):
+class FollowViewSet(ListCreateViewSet):
     serializer_class = FollowSerializer
     filter_backends = [filters.SearchFilter]
     search_fields = ['user__username']
