@@ -1,2 +1,2 @@
-# api_final
-api final
+# API Yatube Project 
+Stack Django REST Framework, SQlite, Redoc
