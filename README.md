@@ -8,7 +8,7 @@
 ``` git clone https://github.com/Lev1sDev/api_final_yatube.git  ``` \
 ```python3 -m venv venv``` \
 ```source venv/bin/activate``` \
-```pip3 install -r requirements.txt
+```pip3 install -r requirements.txt```
 
 
 ### Выполнить миграции:
